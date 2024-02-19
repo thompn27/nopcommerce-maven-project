@@ -1,0 +1,25 @@
+{
+  "productName1": "Build your own computer",
+  "productName2": "Apple MacBook Pro 13-inch",
+  "addProduct": {
+    "processorName": "2.5 GHz Intel Pentium Dual-Core E2200 [+$15.00]",
+    "ramType": "2 GB",
+    "hddName": "320 GB",
+    "oSName": "Vista Home [+$50.00]",
+    "softwareName": "Microsoft Office [+$50.00]"
+  },
+  "updateProduct": {
+    "processorName": "2.2 GHz Intel Pentium Dual-Core E2200",
+    "ramType": "2 GB",
+    "hddName": "400 GB [+$100.00]",
+    "oSName": "Vista Premium [+$60.00]",
+    "softwareName": "Acrobat Reader [+$10.00]",
+    "productQuantities": "3"
+  },
+  "updateShoppingCart": {
+    "searchKeyword": "Lenovo",
+    "productName": "Lenovo IdeaCentre 600 All-in-One PC",
+    "quantitiesString": "5"
+  }
+
+}

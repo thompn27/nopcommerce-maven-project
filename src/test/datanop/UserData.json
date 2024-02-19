@@ -1,0 +1,17 @@
+{
+  "firstName": "Ro",
+  "lastName": "P",
+  "password": "123456",
+  "newFirstName": "rosy",
+  "newLastName": "pham",
+  "dateVale": "24",
+  "monthValue": "January",
+  "yearValue": "2000",
+  "companyName": "pg",
+  "countryValue": "Bahrain",
+  "cityName": "Hanoi",
+  "address1": "219 Trung Kinh",
+  "zipCode": "550000",
+  "phoneNumber": "0987654321",
+  "newPassword": "12345678"
+}

@@ -1,0 +1,9 @@
+{
+  "paymentMethod": "Check / Money Order",
+  "shippingMethod": "Ground",
+  "country": "Australia",
+  "cityName": "Sydney",
+  "address1": "219 Trung Kinh",
+  "zipCode": "5500",
+  "phoneNumber": "0987654321"
+}
