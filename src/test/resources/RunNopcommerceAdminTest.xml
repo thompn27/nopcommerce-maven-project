@@ -7,11 +7,10 @@
     </listeners>
     <parameter name="urlName" value="https://admin-demo.nopcommerce.com" />
 
-    <test name="Run on H_FIREFOX">
-        <parameter name="browser" value="h_firefox" />
+    <test name="Run on CHROME">
+        <parameter name="browser" value="chrome" />
         <classes>
-            <class name="common.nopcommerce.Nop_Register_Cookie"></class>
-            <class name="nopcommerceuser.User_Order"></class>
+            <class name="nopcommerceadmin.Admin_Catalog_Product"></class>
         </classes>
     </test>
 

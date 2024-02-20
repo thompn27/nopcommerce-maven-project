@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjectsNopCommerceUser.*;
-import PageUIsNopCommerceAdmin.AdminDashboardPageUI;
+import pageUIsNopCommerceAdmin.AdminDashboardPageUI;
 import pageObjectsNopCommerceAdmin.AdminLoginPageObject;
 import pageUIsNopCommerceUser.BasePageUI;
 import pageUIsNopCommerceUser.UserHomePageUI;
@@ -636,11 +636,11 @@ public class BasePage {
         return PageGeneratorManager.getUserProductDetailPageObject(driver);
     }
     public void openPageBySubAndParentPageNameNop(WebDriver driver, String parentPageName, String subPageName) {
-//        waitForElementClickable(driver, BasePageUI.MENU_TITLE_BY_PAGE_NAME_NOP, parentPageName, subPageName);
-//        clickToElement(driver, BasePageUI.MENU_TITLE_BY_PAGE_NAME_NOP, parentPageName, subPageName);
+        waitForElementClickable(driver, BasePageUI.MENU_TITLE_BY_PARENT_PAGE_NAME, parentPageName);
+        clickToElement(driver, BasePageUI.MENU_TITLE_BY_PARENT_PAGE_NAME, parentPageName);
 
-        waitForElementClickable(driver, BasePageUI.PAGE_BY_SUB_PARENT_PAGE_NAME_NOP, parentPageName, subPageName);
-        clickToElement(driver, BasePageUI.PAGE_BY_SUB_PARENT_PAGE_NAME_NOP, parentPageName, subPageName);
+        waitForElementClickable(driver, BasePageUI.PAGE_BY_SUB_PAGE_NAME, parentPageName, subPageName);
+        clickToElement(driver, BasePageUI.PAGE_BY_SUB_PAGE_NAME, parentPageName, subPageName);
     }
     public void inputToTextBoxByLabelAndPageNameNop(WebDriver driver, String pageName, String labelName, String inputValue) {
         waitForElementVisible(driver, BasePageUI.TEXTBOX_BY_LABEL_AND_PAGENAME_NOP, pageName, labelName);
@@ -651,9 +651,17 @@ public class BasePage {
         clickToElement(driver, BasePageUI.SEARCH_BUTTON_BY_PAGE_NAME_NOP, pageName);
     }
     public boolean isLoadingIconUndisplayedNop(WebDriver driver) {
-        //waitForElementInVisible(driver, BasePageUI.LOADING_ICON);
-        return isElementUnDisplayed(driver, BasePageUI.LOADING_ICON);
-        //return !isDisplayElement(driver, BasePageUI.LOADING_ICON);
+        waitForElementInVisible(driver, BasePageUI.LOADING_ICON);
+        //return isElementUnDisplayed(driver, BasePageUI.LOADING_ICON);
+        return !isDisplayElement(driver, BasePageUI.LOADING_ICON);
+    }
+    public void selectItemByLabelAndValue(WebDriver driver, String labelName, String valueName) {
+        waitForElementClickable(driver, BasePageUI.ITEM_DROPDOWN_BY_LABEL_AND_VALUE, labelName);
+        selectItemInDropdownByDefault(driver, BasePageUI.ITEM_DROPDOWN_BY_LABEL_AND_VALUE, valueName, labelName);
+    }
+    public String getProductInforByLabelDisplayed(WebDriver driver, String attributeName, String labelName) {
+        waitForElementVisible(driver, BasePageUI.VALUE_TEXTBOX_BY_LABEL_NAME, labelName);
+        return getAttributeValue(driver, BasePageUI.VALUE_TEXTBOX_BY_LABEL_NAME, attributeName, labelName);
     }
     public void sleepInSecond(long timeInSecond) {
         try {
@@ -663,7 +671,8 @@ public class BasePage {
         }
     }
 
-    private long longTime = 30;
-    private long shortTime = 5;
+    private long longTime = 40;
+    private long shortTime = 6;
+
 
 }

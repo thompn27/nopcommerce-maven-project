@@ -1,4 +1,4 @@
-package PageUIsNopCommerceAdmin;
+package pageUIsNopCommerceAdmin;
 
 public class AdminDashboardPageUI {
     public static final String DASHBOARD_TEXT = "xpath=//h1[contains(text(),'Dashboard')]";

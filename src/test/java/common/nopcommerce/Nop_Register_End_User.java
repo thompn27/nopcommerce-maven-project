@@ -1,6 +1,7 @@
 package common.nopcommerce;
 
 import commons.BaseTest;
+import datanop.UserData;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
@@ -10,20 +11,15 @@ import pageObjectsNopCommerceUser.UserHomePageObject;
 import pageObjectsNopCommerceUser.UserRegisterPageObject;
 
 public class Nop_Register_End_User extends BaseTest {
-    private WebDriver driver;
-    private UserHomePageObject userHomePageObject;
-    private UserRegisterPageObject userRegisterPageObject;
-    private String firstName, lastName;
-
-    public static String emailAddress, password;
     @Parameters("browser")
     @BeforeTest
     public void Register_An_Account(String browserName){
         driver = getBrowserDriver(browserName);
         userHomePageObject = PageGeneratorManager.getHomePageObject(driver);
 
-        firstName = "a";
-        lastName = "3";
+
+        firstName = userData.getFirstName();
+        lastName = userData.getLastName();
         emailAddress = firstName + lastName + getRandNumber() + "@gmail.com";
         password = "123456";
 
@@ -40,4 +36,11 @@ public class Nop_Register_End_User extends BaseTest {
         Assert.assertEquals(userRegisterPageObject.getRegisterSuccessfulMessage(),"Your registration completed");
         closeBrowserDriver();
     }
+    private WebDriver driver;
+    private UserHomePageObject userHomePageObject;
+    private UserRegisterPageObject userRegisterPageObject;
+    private UserData userData;
+    private String firstName, lastName;
+
+    public static String emailAddress, password;
 }

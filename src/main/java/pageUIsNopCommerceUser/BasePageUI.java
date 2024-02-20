@@ -15,9 +15,12 @@ public class BasePageUI {
     public static final String LOGO_PAGE = "xpath=//div[@class='header-logo']//img";
     public static final String PRODUCT_NAME_LINK = "xpath=//h2[@class='product-title']//a[text()='%s']";
     public static final String SHOPPING_CART_LINK = "css=div.header-upper a.ico-cart";
-    public static final String PAGE_BY_SUB_PARENT_PAGE_NAME_NOP = "xpath=//p[contains(text(),'%s')]/parent::a/following-sibling::ul//p[text()=' %s']";
+    public static final String PAGE_BY_SUB_PAGE_NAME = "xpath=//p[contains(text(),'%s')]/parent::a/following-sibling::ul//p[text()=' %s']";
     public static final String TEXTBOX_BY_LABEL_AND_PAGENAME_NOP = "xpath=//h1[contains(text(),'%s')]/parent::div/following-sibling::section//input[@id='%s']";
     public static final String SEARCH_BUTTON_BY_PAGE_NAME_NOP = "xpath=//h1[contains(text(),'%s')]/parent::div/following-sibling::section//button[contains(@id,'search')]";
     public static final String LOADING_ICON = "xpath=//div[@id='ajaxBusy']//span";
-    //public static final String MENU_TITLE_BY_PAGE_NAME_NOP = ;
+    public static final String MENU_TITLE_BY_PARENT_PAGE_NAME = "xpath=//div[@class='os-content']//ul[@role='menu']//p[contains(text(),'%s')]//i";
+
+    public static final String ITEM_DROPDOWN_BY_LABEL_AND_VALUE = "xpath=//label[text()='%s']/parent::div/parent::div/following-sibling::div//select";
+    public static final String VALUE_TEXTBOX_BY_LABEL_NAME = "xpath=//label[text()='%s']/parent::div/parent::div/following-sibling::div//input";
 }
