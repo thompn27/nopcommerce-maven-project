@@ -57,7 +57,7 @@ public class BaseTest {
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().window().maximize();
-        driver.get(GlobalConstants.USER_NOPCOM_PAGE_URL);
+        driver.get(GlobalConstants.getGlobalConstants().getUserNopComPageUrl());
         return driver;
     }
     protected WebDriver getBrowserDriver(String browserName, String urlName){

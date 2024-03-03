@@ -3,14 +3,64 @@ package commons;
 import java.io.File;
 
 public class GlobalConstants {
-    public static final String USER_NOPCOM_PAGE_URL = "https://demo.nopcommerce.com/";
-    public static final String ADMIN_NOPCOM_PAGE_URL = "https://admin-demo.nopcommerce.com/";
-    public static final String PROJECT_PATH = System.getProperty("user.dir");
-    public static final String OS_NAME = System.getProperty("os.name");
-    public static final String UPLOAD_FILE = PROJECT_PATH + File.separator + "uploadFiles" + File.separator;
-    public static final String DOWNLOAD_FILE = PROJECT_PATH + File.separator + "downloadFiles";
-    public static final String BROWSER_LOG = PROJECT_PATH + File.separator + "browserLogs";
-    public static final long SHORT_TIMEOUT = 5;
-    public static final long LONG_TIMEOUT = 30;
-    public static final int RETRY_TEST_FAIL = 3;
+    private static GlobalConstants GlobalConstants;
+    private GlobalConstants(){
+    }
+    public static GlobalConstants getGlobalConstants(){
+        if (GlobalConstants == null){
+            GlobalConstants = new GlobalConstants();
+        }
+        return GlobalConstants;
+    }
+
+    public String getUserNopComPageUrl() {
+        return userNopComPageUrl;
+    }
+
+    public String getAdminNopComPageUrl() {
+        return adminNopComPageUrl;
+    }
+
+    public String getProjectPath() {
+        return projectPath;
+    }
+
+    public String getOsName() {
+        return osName;
+    }
+
+    public String getUploadFile() {
+        return uploadFile;
+    }
+
+    public String getDownloadFile() {
+        return downloadFile;
+    }
+
+    public String getBrowserLog() {
+        return browserLog;
+    }
+
+    public long getShortTimeout() {
+        return shortTimeout;
+    }
+
+    public long getLongTimeout() {
+        return longTimeout;
+    }
+
+    public int getRetryTestFail() {
+        return retryTestFail;
+    }
+
+    private final String userNopComPageUrl = "https://demo.nopcommerce.com/";
+    private final String adminNopComPageUrl = "https://admin-demo.nopcommerce.com/";
+    private final String projectPath = System.getProperty("user.dir");
+    private final String osName = System.getProperty("os.name");
+    private final String uploadFile = projectPath + File.separator + "uploadFiles" + File.separator;
+    private final String downloadFile = projectPath + File.separator + "downloadFiles";
+    private final String browserLog = projectPath + File.separator + "browserLogs";
+    private final long shortTimeout = 5;
+    private final long longTimeout = 30;
+    private final int retryTestFail = 3;
 }

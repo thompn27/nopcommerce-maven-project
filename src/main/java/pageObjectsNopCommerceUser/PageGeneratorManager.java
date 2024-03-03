@@ -1,10 +1,7 @@
 package pageObjectsNopCommerceUser;
 
 import org.openqa.selenium.WebDriver;
-import pageObjectsNopCommerceAdmin.AdminDashboardPageObject;
-import pageObjectsNopCommerceAdmin.AdminLoginPageObject;
-import pageObjectsNopCommerceAdmin.AdminProductDetailPageObject;
-import pageObjectsNopCommerceAdmin.AdminProductPageObject;
+import pageObjectsNopCommerceAdmin.*;
 
 public class PageGeneratorManager {
     public static UserHomePageObject getHomePageObject(WebDriver driver){
@@ -93,5 +90,17 @@ public class PageGeneratorManager {
     }
     public static UserThankYouPageObject getUserThankYouPageObject(WebDriver driver){
         return new UserThankYouPageObject(driver);
+    }
+    public static AdminCustomerPageObject getAdminCustomerPageObject(WebDriver driver){
+        return new AdminCustomerPageObject(driver);
+    }
+    public static AdminAddNewCustomerPageObject getAdminAddNewCustomerPageObject(WebDriver driver){
+        return new AdminAddNewCustomerPageObject(driver);
+    }
+    public static AdminEditCustomerPageObject getAdminEditCustomerPageObject(WebDriver driver){
+        return new AdminEditCustomerPageObject(driver);
+    }
+    public static AdminAddAddressPageObject getAdminAddAddressPageObject(WebDriver driver){
+        return new AdminAddAddressPageObject(driver);
     }
 }

@@ -7,9 +7,12 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pageObjectsNopCommerceAdmin.AdminCustomerPageObject;
 import pageObjectsNopCommerceUser.*;
+import pageUIsNopCommerceAdmin.AdminAddNewCustomerPageUI;
 import pageUIsNopCommerceAdmin.AdminDashboardPageUI;
 import pageObjectsNopCommerceAdmin.AdminLoginPageObject;
+import pageUIsNopCommerceAdmin.AdminProductPageUI;
 import pageUIsNopCommerceUser.BasePageUI;
 import pageUIsNopCommerceUser.UserHomePageUI;
 import org.openqa.selenium.Keys;
@@ -19,6 +22,11 @@ import java.util.List;
 import java.util.Set;
 
 public class BasePage {
+//    private WebDriver driver;
+//
+//    protected BasePage(WebDriver driver){
+//        this.driver = driver;
+//    }
     public static BasePage getBasePageObject() {
         return new BasePage();
     }
@@ -662,6 +670,30 @@ public class BasePage {
     public String getProductInforByLabelDisplayed(WebDriver driver, String attributeName, String labelName) {
         waitForElementVisible(driver, BasePageUI.VALUE_TEXTBOX_BY_LABEL_NAME, labelName);
         return getAttributeValue(driver, BasePageUI.VALUE_TEXTBOX_BY_LABEL_NAME, attributeName, labelName);
+    }
+    public void selectTheCustomerRole(WebDriver driver, String customerRole) {
+        enterKeyboard(driver, BasePageUI.CUSTOMER_ROLE, Keys.DELETE);
+        waitForElementVisible(driver, BasePageUI.CUSTOMER_ROLE);
+
+        selectItemInCustomDropdown(driver, BasePageUI.CUSTOMER_ROLE, BasePageUI.ROLE_LIST, customerRole);
+    }
+    public String getSearchResultItems(WebDriver driver) {
+        waitForElementVisible(driver, BasePageUI.SEARCH_RESULT_ITEMS);
+        return getTextElement(driver, BasePageUI.SEARCH_RESULT_ITEMS).split(" ")[2];
+    }
+
+    public void clickOnSaveAndContinueEditButton(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.SAVE_AND_CONTINUE_EDIT_BUTTON);
+        clickToElement(driver, BasePageUI.SAVE_AND_CONTINUE_EDIT_BUTTON);
+    }
+    public AdminCustomerPageObject clickOnbackToCustomerListPage(WebDriver driver) {
+        waitForElementClickable(driver, BasePageUI.BACK_TO_CUSTOMER_LIST);
+        clickToElement(driver, BasePageUI.BACK_TO_CUSTOMER_LIST);
+        return PageGeneratorManager.getAdminCustomerPageObject(driver);
+    }
+    public boolean isSuccessMessageDisplayed(WebDriver driver) {
+        waitForElementVisible(driver, BasePageUI.ADD_NEW_CUS_SUCCESS_MESSAGE);
+        return isDisplayElement(driver, BasePageUI.ADD_NEW_CUS_SUCCESS_MESSAGE);
     }
     public void sleepInSecond(long timeInSecond) {
         try {

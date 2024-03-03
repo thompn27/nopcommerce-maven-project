@@ -2,8 +2,8 @@ package nopcommerceuser;
 
 import common.nopcommerce.Nop_Register_Cookie;
 import commons.BaseTest;
-import datanop.AddressData;
-import datanop.ProductData;
+import com.datanop.AddressData;
+import com.datanop.ProductData;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

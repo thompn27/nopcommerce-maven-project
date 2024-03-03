@@ -1,7 +1,7 @@
 package nopcommerceadmin;
 
 import commons.BaseTest;
-import datanop.AdminProductSearchData;
+import com.datanop.AdminProductSearchData;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -36,7 +36,7 @@ public class Admin_Catalog_Product extends BaseTest {
     @Test
     public void Admin_01_Search_With_Product_Name(){
         log.info("Dashboard: open Catalog - Product");
-        adminDashboardPageObject.openPageBySubAndParentPageNameNop(driver,"Catalog", "Products");
+        adminDashboardPageObject.openPageBySubAndParentPageNameNop(driver, "Catalog", "Products");
         adminProductPageObject = PageGeneratorManager.getAdminProductPageObject(driver);
 
         log.info("Product: wait for Loading icon disappear");
@@ -53,7 +53,7 @@ public class Admin_Catalog_Product extends BaseTest {
 
         log.info("Product: verify product displayed");
         Assert.assertTrue(adminProductPageObject.isProductResultDisplayedByProductName(productName));
-        Assert.assertEquals(adminProductPageObject.getSearchResultItems(), "1-1 of 1 items");
+        Assert.assertEquals(adminProductPageObject.getSearchResultItems(driver), "1");
     }
     @Test
     public void Admin_02_Search_With_Product_Name_Parent_Category_Unchecked(){
@@ -76,7 +76,7 @@ public class Admin_Catalog_Product extends BaseTest {
         Assert.assertTrue(adminProductPageObject.isLoadingIconUndisplayedNop(driver));
 
         log.info("Products page: verify No product displayed");
-        Assert.assertEquals(adminProductPageObject.getSearchResultItems(), "No records");
+        Assert.assertEquals(adminProductPageObject.getSearchResultItems(driver), "No records");
     }
     @Test
     public void Admin_03_Search_With_Product_Name_Parent_Category_Checked(){
@@ -103,7 +103,7 @@ public class Admin_Catalog_Product extends BaseTest {
 
         log.info("Product: verify product displayed");
         Assert.assertTrue(adminProductPageObject.isProductResultDisplayedByProductName(productName));
-        Assert.assertEquals(adminProductPageObject.getSearchResultItems(), "1-1 of 1 items");
+        Assert.assertEquals(adminProductPageObject.getSearchResultItems(driver), "1");
 
     }
     @Test
@@ -128,7 +128,7 @@ public class Admin_Catalog_Product extends BaseTest {
 
         log.info("Product: verify product displayed");
         Assert.assertTrue(adminProductPageObject.isProductResultDisplayedByProductName(productName));
-        Assert.assertEquals(adminProductPageObject.getSearchResultItems(), "1-1 of 1 items");
+        Assert.assertEquals(adminProductPageObject.getSearchResultItems(driver), "1");
     }
     @Test
     public void Admin_05_Search_With_Product_Name_Manufacturer(){
@@ -154,7 +154,7 @@ public class Admin_Catalog_Product extends BaseTest {
         Assert.assertTrue(adminProductPageObject.isLoadingIconUndisplayedNop(driver));
 
         log.info("Products page: verify No product displayed");
-        Assert.assertEquals(adminProductPageObject.getSearchResultItems(), "No records");
+        Assert.assertEquals(adminProductPageObject.getSearchResultItems(driver), "No records");
     }
     @Test
     public void Admin_06_Go_Directlt_To_Product_SKU(){

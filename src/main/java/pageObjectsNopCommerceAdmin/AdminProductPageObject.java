@@ -16,11 +16,6 @@ public class AdminProductPageObject extends BasePage {
         return isDisplayElement(driver, AdminProductPageUI.PRODUCT_IN_TABLE_BY_PRODUCT_NAME, productName);
     }
 
-    public String getSearchResultItems() {
-        waitForElementVisible(driver, AdminProductPageUI.SEARCH_RESULT_ITEMS);
-        return getTextElement(driver, AdminProductPageUI.SEARCH_RESULT_ITEMS);
-    }
-
     public void checkToCheckboxByLabelName(String labelName) {
         waitForElementVisible(driver, AdminProductPageUI.CHECK_BOX_BY_LABEL_NAME, labelName);
         checkToCheckboxOrRadio(driver, AdminProductPageUI.CHECK_BOX_BY_LABEL_NAME, labelName);

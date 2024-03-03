@@ -1,6 +1,5 @@
-package datanop;
+package com.datanop;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import commons.GlobalConstants;
@@ -12,7 +11,7 @@ public class AdminProductSearchData {
         try{
             ObjectMapper mapper = new ObjectMapper();
             mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-            return mapper.readValue(new File(GlobalConstants.PROJECT_PATH + "/src/test/datanop/AdminProductSearchData.json"), AdminProductSearchData.class);
+            return mapper.readValue(new File(GlobalConstants.getGlobalConstants().getProjectPath() + "/src/test/datanop/AdminProductSearchData.json"), AdminProductSearchData.class);
         }catch (Exception ex){
             ex.printStackTrace();
         }

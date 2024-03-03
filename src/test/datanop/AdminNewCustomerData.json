@@ -1,0 +1,10 @@
+{
+  "email": "rosy1234@gmai.com",
+  "password": "12345678",
+  "firstName": "rosy",
+  "lastname": "pham",
+  "gender": "female",
+  "dateOfBirth": "9/9/1999",
+  "companyName": "pg",
+  "adminComment": "new customer as a guest"
+}

@@ -1,7 +1,7 @@
 package common.nopcommerce;
 
 import commons.BaseTest;
-import datanop.UserData;
+import com.datanop.UserData;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;

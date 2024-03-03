@@ -23,4 +23,11 @@ public class BasePageUI {
 
     public static final String ITEM_DROPDOWN_BY_LABEL_AND_VALUE = "xpath=//label[text()='%s']/parent::div/parent::div/following-sibling::div//select";
     public static final String VALUE_TEXTBOX_BY_LABEL_NAME = "xpath=//label[text()='%s']/parent::div/parent::div/following-sibling::div//input";
+    public static final String CUSTOMER_ROLE = "xpath=//input[@aria-describedby='SelectedCustomerRoleIds_taglist']";
+    public static final String ROLE_LIST = "xpath=//ul[@id='SelectedCustomerRoleIds_listbox']//li";
+    public static final String SEARCH_RESULT_ITEMS = "css=div[class='dataTables_info']";
+    public static final String SAVE_AND_CONTINUE_EDIT_BUTTON = "xpath=//button[@name='save-continue']";
+    public static final String BACK_TO_CUSTOMER_LIST = "xpath=//a[text()='back to customer list']";
+    public static final String ADD_NEW_CUS_SUCCESS_MESSAGE = "xpath=//div[contains(@class,'alert-success')]";
+
 }
