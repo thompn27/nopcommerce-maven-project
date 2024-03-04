@@ -15,14 +15,6 @@ import pageObjectsNopCommerceUser.UserRegisterPageObject;
 import java.util.Set;
 
 public class Nop_Register_Cookie extends BaseTest {
-    private WebDriver driver;
-    private UserHomePageObject userHomePageObject;
-    private UserLoginPageObject userLoginPageObject;
-    private UserRegisterPageObject userRegisterPageObject;
-    private UserData userData;
-    public static String firstName, lastName, emailAddress, password;
-    public static Set<Cookie> loggedCookies;
-
     @Parameters("browser")
     @BeforeTest
     public void Register_An_Account(String browserName){
@@ -63,4 +55,12 @@ public class Nop_Register_Cookie extends BaseTest {
         loggedCookies = userHomePageObject.getAllCookies(driver);
         closeBrowserDriver();
     }
+    private WebDriver driver;
+    private UserHomePageObject userHomePageObject;
+    private UserLoginPageObject userLoginPageObject;
+    private UserRegisterPageObject userRegisterPageObject;
+    private UserData userData;
+    public static String firstName, lastName, emailAddress, password;
+    public static Set<Cookie> loggedCookies;
+
 }

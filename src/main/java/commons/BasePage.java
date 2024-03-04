@@ -633,6 +633,7 @@ public class BasePage {
     }
     public void openSubCategoryPageByName(WebDriver driver, String categoryName, String productCategoryName) {
         waitForElementClickable(driver, UserHomePageUI.CATEGORY_NAME_TAB, categoryName);
+        scrollToElement(driver, UserHomePageUI.CATEGORY_NAME_TAB, categoryName);
         hoverToElement(driver, UserHomePageUI.CATEGORY_NAME_TAB, categoryName);
 
         waitForElementClickable(driver, UserHomePageUI.PRODUCT_CATEGORY_NAME, productCategoryName);

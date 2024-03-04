@@ -20,7 +20,7 @@ public class User_Sort_Display_Paging extends BaseTest {
     @Test
     public void User_01_Sort_Product_By_Name_A_To_Z(){
         log.info("Home page: open Notebook page");
-        userHomePageObject.openSubCategoryPageByName(driver,"Computers ", "Notebooks ");
+        userHomePageObject.openSubCategoryPageByName(driver,"Computers", "Notebooks");
         userNoteBookPageObject = PageGeneratorManager.getUserNoteBookPageObject(driver);
 
         log.info("Notebook page: select Sort by A to Z");
@@ -32,7 +32,7 @@ public class User_Sort_Display_Paging extends BaseTest {
     @Test
     public void User_02_Sort_Product_By_Name_Z_To_A(){
         log.info("Home page: open Notebook page");
-        userHomePageObject.openSubCategoryPageByName(driver,"Computers ", "Notebooks ");
+        userHomePageObject.openSubCategoryPageByName(driver,"Computers", "Notebooks");
         userNoteBookPageObject = PageGeneratorManager.getUserNoteBookPageObject(driver);
 
         log.info("Notebook page: select Sort by A to Z");
@@ -44,7 +44,7 @@ public class User_Sort_Display_Paging extends BaseTest {
     @Test
     public void User_03_Sort_Product_By_Price_Low_to_High(){
         log.info("Home page: open Notebook page");
-        userHomePageObject.openSubCategoryPageByName(driver,"Computers ", "Notebooks ");
+        userHomePageObject.openSubCategoryPageByName(driver,"Computers", "Notebooks");
         userNoteBookPageObject = PageGeneratorManager.getUserNoteBookPageObject(driver);
 
         log.info("Notebook page: select Sort by price Low to high");
@@ -57,7 +57,7 @@ public class User_Sort_Display_Paging extends BaseTest {
     @Test
     public void User_04_Sort_Product_By_Price_High_to_Low(){
         log.info("Home page: open Notebook page");
-        userHomePageObject.openSubCategoryPageByName(driver,"Computers ", "Notebooks ");
+        userHomePageObject.openSubCategoryPageByName(driver,"Computers", "Notebooks");
         userNoteBookPageObject = PageGeneratorManager.getUserNoteBookPageObject(driver);
 
         log.info("Notebook page: select Sort by price Low to high");

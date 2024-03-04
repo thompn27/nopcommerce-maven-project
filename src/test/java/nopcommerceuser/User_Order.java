@@ -49,6 +49,7 @@ public class User_Order extends BaseTest {
         String oSName= productData.getAddoSName();
         String softwareName = productData.getAddSoftwareName();
         log.info("Home: open Desktop page");
+        userHomePageObject.closeLogInSuccessMessage();
         userHomePageObject.openSubCategoryPageByName(driver, "Computers", "Desktops");
         userDesktopPageObject = PageGeneratorManager.getUserDesktopPageObject(driver);
 
@@ -245,17 +246,6 @@ public class User_Order extends BaseTest {
 
         log.info("Thank you page: Verify order success message displayed");
         Assert.assertTrue(userThankYouPageObject.isOrderSuccessMessageDisplayed());
-
-    }
-    @Test
-    public void User_06_Re_Order(){
-        //String orderNumber = userCheckOutPageObject.getOrderNumber();
-        userThankYouPageObject = PageGeneratorManager.getUserThankYouPageObject(driver);
-        userThankYouPageObject.openPagesByAreaAndPageName(driver, "footer-upper", "Orders");
-        userOrdersPageObject = PageGeneratorManager.getOrdersPageObject(driver);
-
-        log.info("Order page: click on Detail link to open order detail");
-
 
     }
     @AfterClass(alwaysRun = true)

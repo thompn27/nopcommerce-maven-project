@@ -4,9 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import commons.GlobalConstants;
+import lombok.Getter;
 
 import java.io.File;
 
+@Getter
 public class UserData {
     public static UserData getUserData(){
         try{
@@ -17,64 +19,6 @@ public class UserData {
             ex.printStackTrace();
         }
         return null;
-    }
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-    public String getPassword() {
-        return password;
-    }
-
-    public String getNewFirstName() {
-        return newFirstName;
-    }
-
-    public String getNewLastName() {
-        return newLastName;
-    }
-
-    public String getDateVale() {
-        return dateVale;
-    }
-
-    public String getMonthValue() {
-        return monthValue;
-    }
-
-    public String getYearValue() {
-        return yearValue;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public String getCountryValue() {
-        return countryValue;
-    }
-
-    public String getCityName() {
-        return cityName;
-    }
-
-    public String getAddress1() {
-        return address1;
-    }
-
-    public String getZipCode() {
-        return zipCode;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public String getNewPassword() {
-        return newPassword;
     }
 
     @JsonProperty("firstName")

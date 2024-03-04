@@ -23,6 +23,19 @@ public class Admin_Customer extends BaseTest {
 
         emailAddress = "admin@yourstore.com";
         password = "admin";
+        emailAddressCustomer = adminNewCustomerData.getEmail();
+        passwordCustomer = adminNewCustomerData.getPassword();
+        firstName = adminNewCustomerData.getFirstName();
+        lastName = adminNewCustomerData.getLastname();
+        gender = adminNewCustomerData.getGender();
+        dateOfBirth = adminNewCustomerData.getDateOfBirth();
+        companyName = adminNewCustomerData.getCompanyName();
+        adminComment = adminNewCustomerData.getAdminComment();
+        country = addressData.getCountry();
+        cityName = addressData.getCityName();
+        address1 = addressData.getAddress1();
+        zipCode = addressData.getZipCode();
+        phoneNumber = addressData.getPhoneNumber();
 
         log.info("Login page: Login to Admin page with email and passwor");
         adminDashboardPageObject = adminLoginPageObject.loginAsAdmin(emailAddress, password);
@@ -358,18 +371,18 @@ public class Admin_Customer extends BaseTest {
     private AdminAddAddressPageObject adminAddAddressPageObject;
     private AdminNewCustomerData adminNewCustomerData;
     private AddressData addressData;
-    private String emailAddressCustomer = adminNewCustomerData.getEmail();
-    private String passwordCustomer = adminNewCustomerData.getPassword();
-    private String firstName = adminNewCustomerData.getFirstName();
-    private String lastName = adminNewCustomerData.getLastname();
-    private String gender = adminNewCustomerData.getGender();
-    private String dateOfBirth = adminNewCustomerData.getDateOfBirth();
-    private String companyName = adminNewCustomerData.getCompanyName();
-    private String adminComment = adminNewCustomerData.getAdminComment();
-    private String country = addressData.getCountry();
-    private String cityName = addressData.getCityName();
-    private String address1 = addressData.getAddress1();
-    private String zipCode = addressData.getZipCode();
-    private String phoneNumber = addressData.getPhoneNumber();
+    private String emailAddressCustomer;
+    private String passwordCustomer;
+    private String firstName;
+    private String lastName;
+    private String gender;
+    private String dateOfBirth;
+    private String companyName;
+    private String adminComment;
+    private String country;
+    private String cityName;
+    private String address1;
+    private String zipCode;
+    private String phoneNumber;
 }
 

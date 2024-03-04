@@ -5,7 +5,6 @@
     <listeners>
         <listener class-name="commons.MethodListener"/>
     </listeners>
-    <parameter name="urlName" value="https://demo.nopcommerce.com/" />
 
     <test name="Run on FIREFOX">
         <parameter name="browser" value="firefox" />

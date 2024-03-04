@@ -1,7 +1,7 @@
 package nopcommerceadmin;
 
 import commons.BaseTest;
-import com.datanop.AdminProductSearchData;
+import com.datanop.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -24,6 +24,9 @@ public class Admin_Catalog_Product extends BaseTest {
 
         emailAddress = "admin@yourstore.com";
         password = "admin";
+        productName = adminProductSearchData.getProductName();
+        productSku = adminProductSearchData.getProductSku();
+        attributeValue = adminProductSearchData.getAttributeValue();
 
         log.info("Login page: Login to Admin page with email and passwor");
         adminDashboardPageObject = adminLoginPageObject.loginAsAdmin(emailAddress, password);
@@ -196,8 +199,8 @@ public class Admin_Catalog_Product extends BaseTest {
     private AdminProductDetailPageObject adminProductDetailPageObject;
     private AdminProductPageObject adminProductPageObject;
     private AdminProductSearchData adminProductSearchData;
-    private String productName = adminProductSearchData.getProductName();
-    private String productSku = adminProductSearchData.getProductSku();
-    private String attributeValue = adminProductSearchData.getAttributeValue();
+    private String productName;
+    private String productSku;
+    private String attributeValue;
 }
 

@@ -1,11 +1,14 @@
 package com.datanop;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import commons.GlobalConstants;
+import lombok.Getter;
 
 import java.io.File;
 
+@Getter
 public class AdminProductSearchData {
     public static AdminProductSearchData getAdminProductSearchData(){
         try{
@@ -18,19 +21,10 @@ public class AdminProductSearchData {
         return null;
     }
 
-    public String getProductName() {
-        return productName;
-    }
-
-    public String getProductSku() {
-        return productSku;
-    }
-
-    public String getAttributeValue() {
-        return attributeValue;
-    }
-
+    @JsonProperty("productName")
     private String productName;
+    @JsonProperty("productSku")
     private String productSku;
+    @JsonProperty("attributeValue")
     private String attributeValue;
 }
